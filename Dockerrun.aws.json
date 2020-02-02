@@ -1,7 +1,7 @@
 {
-  "AWSEBDockerrunVersion": "1",
+  "AWSEBDockerrunVersion": 2,
   "Image": {
-    "Name": "andrewbestbier/ci-comparison-blog",
+    "Name": "825035741702.dkr.ecr.ca-central-1.amazonaws.com/xerp_client",
     "Update": "true"
   },
   "Ports": [
