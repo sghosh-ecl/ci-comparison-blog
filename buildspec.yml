@@ -16,7 +16,8 @@ phases:
       - npm test
   build:
     commands:
-      - docker build -t 825035741702.dkr.ecr.ca-central-1.amazonaws.com/xerp_client:latest
+      - docker build -t xerp_client .
+      - docker tag xerp_client 825035741702.dkr.ecr.ca-central-1.amazonaws.com/xerp_client:latest
   post_build:
     commands:
       - docker push 825035741702.dkr.ecr.ca-central-1.amazonaws.com/xerp_client:latest
