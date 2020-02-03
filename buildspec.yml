@@ -5,7 +5,7 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - aws ecr get-login --no-include-email --region ca-central-1 | awk '{print $6}' | docker login -u AWS --password-stdin $(aws ecr get-login --no-include-email --region ca-central-1 | awk '{print $7}')
+      - $(aws ecr get-login --no-include-email --region ca-central-1)
       - npm i npm@latest -g
       - pip install --upgrade pip
       - pip install --upgrade awscli
