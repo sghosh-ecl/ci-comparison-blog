@@ -5,8 +5,7 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - export _DOCKER_REPO="$(aws ecr get-authorization-token --output text  --query 'authorizationData[].proxyEndpoint')"
-      - aws ecr get-login --no-include-email --region ca-central-1 | awk '{print $6}' | docker login -u AWS --password-stdin $_DOCKER_REPO
+      - eval $(aws ecr get-login --no-include-email | sed 's|https://||')
       - npm i npm@latest -g
       - pip install --upgrade pip
       - pip install --upgrade awscli
